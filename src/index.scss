@@ -1,0 +1,36 @@
+/*
+-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+Frontend: Cesar Fernandez
+https://www.linkedin.com/in/cesar-fernandez-797436207/
+movil: +57 321 474 1765 
+-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+*/
+
+// normalize
+@import '~normalize.css/normalize.css';
+
+// generals 
+@import "./scss/generals/variables";
+@import "./scss/generals/mixin";
+
+// font
+@import "./scss/font/font";
+
+// dom
+@import "./scss/dom/dom";
+@import "./scss/dom/form";
+// @import "./scss/dom/table";
+
+// generals
+@import "./scss/interface/generals";
+
+// modal
+// @import "./scss/interface/modal";
+
+// login
+@import "./scss/interface/login";
+
+// dashboard
+@import "./scss/interface/dashboard";

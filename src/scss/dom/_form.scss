@@ -1,0 +1,36 @@
+input, button {
+    border-color: transparent;
+    border-radius: $border-radius * .8;
+}
+
+input {
+    margin: $unit * .5 0 $unit * 1.5 0;
+    padding: $unit * .5;
+
+    &.errorValidate {
+        margin-bottom: 0;
+        border-color: $error;
+    }
+}
+
+button {
+    padding: $unit * .5 $unit;
+    color: $white;
+    cursor: pointer;
+    background-color: $blue;
+    @include animate_all(0.2s);
+
+    &:hover, &:focus {
+        color: $blue-dark;
+        background-color: $cyan;
+    }
+}
+
+div.errorValidate {
+    margin-bottom: $unit * 1.5;
+    padding: $unit * .2 $unit;
+    font-size: $unit * .9;
+    color: $white;
+    background-color: $error;
+    border-radius: 0 0 $border-radius $border-radius;
+}

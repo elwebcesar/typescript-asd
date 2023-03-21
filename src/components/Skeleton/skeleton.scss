@@ -1,0 +1,64 @@
+.skeleton {
+    table {
+        & th, & td {
+            span {
+                display: block;
+                margin: 0 auto;
+                background-color: black;
+            }
+        }
+    
+        & th span {
+            width: 60%;
+            height: 24px;
+            opacity: .03;
+        }
+    
+        & td span {
+            width: 50%;
+            height: 18px;
+            animation: 2s infinite back_animate;
+        }
+    }    
+}
+
+@media screen and (max-width: 1100px) {
+    .skeleton {
+        table td {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: end;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 6px;
+                width: 30%;
+                height: 20px;
+                margin-top: -10px;
+                background-color: black;
+                opacity: .03;
+            }
+
+            & span {
+                margin: inherit;
+                width: 30%;
+            }
+        }
+    }
+}
+
+
+@keyframes back_animate {
+    0% {
+        opacity: .03;
+    }
+    50% {
+        opacity: .1;
+    }
+    100% {
+        opacity: .03;
+    }
+}

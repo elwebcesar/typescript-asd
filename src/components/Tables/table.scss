@@ -1,0 +1,144 @@
+@import '../../scss/generals/variables';
+@import '../../scss/font/font';
+@import "../../scss/generals/mixin";
+
+table {
+    table-layout: fixed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: $white;
+    border: 1px solid $gray-01;
+    border-collapse: collapse;
+    @include shadow($blue-dark,0.2);
+
+    & caption{
+        margin: $unit * .75 0;
+        font-size: $unit * 1.8;
+    }
+
+    & thead {
+        & th {
+            padding: $unit * .8;
+            font-size: $unit * 1.1;
+            border-bottom: 2px solid $gray-01;
+
+            &:hover, &:focus {
+                background-color: rgba($color: $blue-dark, $alpha: .1);
+            }
+    
+        }
+    }
+
+    & tbody tr {
+        &:nth-of-type(odd) {
+            background-color: $gray-02;
+        }
+
+        &:hover, &:focus {
+            background-color: rgba($color: $blue-dark, $alpha: .1);
+        }
+
+        & td {
+            padding: $unit * .5;
+            text-align: center;
+
+            &:focus {
+                background-color: rgba($color: $blue-dark, $alpha: .2) !important;
+            }
+        }
+    }
+
+
+    // table sortable
+    $sortable-ico-size: 10px;
+    $sortable-ico-spacing: -$sortable-ico-size - 4;
+    $sortable-ico-color: $blue-dark;
+
+    &.sortable {
+        &  th {
+            position: relative;
+            cursor: pointer;
+    
+            &::after, &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: ($sortable-ico-size * 1);
+                width: $sortable-ico-size;
+                height: $sortable-ico-size;
+    
+                border: ($sortable-ico-size * .5) solid transparent;
+                opacity: .1;
+                @include animate_all(0.2s)
+            }
+    
+            &::after {
+                margin-top: $sortable-ico-spacing;
+                border-top-width: 0;
+                border-bottom: $sortable-ico-size solid $sortable-ico-color;
+            }
+    
+            &::before {
+                margin-bottom: $sortable-ico-spacing;
+                border-bottom-width: 0;
+                border-top: $sortable-ico-size solid $sortable-ico-color;
+            }
+    
+            &.active {
+                background-color: rgba($color: $sortable-ico-color, $alpha: .15);
+    
+                &::after, &::before {
+                    opacity: .4;
+                }
+    
+                &.asc {
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+    
+                &.desc {
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        & td.active {
+            background-color: rgba($color: $sortable-ico-color, $alpha: .03);
+        }
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+    table {
+        & thead {
+            display: none;
+        }
+        
+        & tr {
+            display: block;
+            border-bottom: 2px solid $gray-01;
+        }
+
+        & td {
+            display: block;
+            text-align: right !important;
+            border-bottom: 1px solid $gray-01;
+
+            &::before {
+                content: attr(data-label);
+                float: left;
+                @include type-font-heavy;
+                // text-transform: uppercase;
+            }
+
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
+}

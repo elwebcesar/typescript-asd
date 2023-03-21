@@ -1,0 +1,13 @@
+@mixin box {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin animate_all($time) {
+    transition: all $time ease;
+}
+
+@mixin shadow($color,$transparency) {
+    box-shadow: 0 10px 8px -2px rgba($color, $transparency);
+}

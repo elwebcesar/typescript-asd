@@ -1,0 +1,38 @@
+html, body {
+    @include box;
+}
+
+body {
+    color: $black;
+    @include type-font;
+    font-size: $unit;
+    background-color: $blue-dark;
+
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+$headingSizes: (($unit * 2.1), ($unit * 1.9), ($unit * 1.7), ($unit * 1.5), ($unit * 1.3), ($unit * 1.1));
+
+%heading {
+   margin: 0 0 $unit 0;
+   color: $blue;
+   @include type-font-heavy;
+}
+
+@for $i from 1 through 6 {
+	h#{$i} {
+      @extend %heading;
+      font-size: nth($headingSizes, $i);
+	}
+}

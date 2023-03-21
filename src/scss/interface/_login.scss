@@ -1,0 +1,37 @@
+.login {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    max-width: 400px;
+    @include shadow($blue-dark,0.9);
+
+    &__header {
+        display: flex;
+        justify-content: center;
+        padding: $unit 0;
+        background-color: $blue;
+        border-radius: $border-radius $border-radius 0 0;
+    }
+
+    & form {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        padding: $unit;
+        background-color: $gray-01;
+        border-radius: 0 0 $border-radius $border-radius;
+
+        input {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        div.errorValidate {
+            width: 94%;
+            max-width: 280px;
+            text-align: center;
+        }
+    }
+}
+  
