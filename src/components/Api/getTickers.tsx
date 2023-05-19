@@ -1,5 +1,5 @@
 
-import { ITiker, ITikerResponse } from './interface/itiker';
+import { ITikerResponse } from './interface/itiker';
 
 export default async function getTickers(): Promise<ITikerResponse> {
     try {

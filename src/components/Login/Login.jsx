@@ -77,6 +77,8 @@ export default function Login(props) {
                 <ErrorMessage name="password" component={({ children }) => <div className="errorValidate">{children}</div>} />
 
                 <button type="submit">Log in</button>
+
+                <p>elwebcesar@gmail.com<br />Cesar2023*</p>
               </Form>
             )}
           </Formik>

@@ -1,5 +1,5 @@
 import React, { createContext } from 'react';
-import logo from '../assests/asd.png';
+import logo from '../assests/logo.svg';
 
 interface ImagesProviderProps {
   children: React.ReactNode;

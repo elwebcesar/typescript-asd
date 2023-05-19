@@ -1,4 +1,4 @@
 export const mock = {
-  email: 'grupoASD@gmail.com',
-  password: 'Rjs2022*'
+  email: 'elwebcesar@gmail.com',
+  password: 'Cesar2023*'
 }
